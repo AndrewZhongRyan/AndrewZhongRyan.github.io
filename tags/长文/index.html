@@ -339,28 +339,10 @@
             <div class="tag-chips">
                 
                 
-                <a href="/tags/%E9%9F%B3%E6%95%B0/" title="音数: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="音数" style="background-color: #F9EBEA;">音数
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/%E7%AC%94%E8%AE%B0/" title="笔记: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="笔记" style="background-color: #F5EEF8;">笔记
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/tags/%E9%A9%AC%E5%8E%9F/" title="马原: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="马原" style="background-color: #D5F5E3;">马原
+                            data-tagname="马原" style="background-color: #F9EBEA;">马原
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -369,7 +351,7 @@
                 <a href="/tags/%E9%98%85%E8%AF%BB/" title="阅读: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="阅读" style="background-color: #E8F8F5;">阅读
+                            data-tagname="阅读" style="background-color: #F5EEF8;">阅读
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -378,7 +360,34 @@
                 <a href="/tags/%E9%95%BF%E6%96%87/" title="长文: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-active "
-                            data-tagname="长文" style="background-color: #FEF9E7;">长文
+                            data-tagname="长文" style="background-color: #D5F5E3;">长文
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%9F%B3%E6%95%B0/" title="音数: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="音数" style="background-color: #E8F8F5;">音数
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%AC%94%E8%AE%B0/" title="笔记: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="笔记" style="background-color: #FEF9E7;">笔记
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%90%86%E5%8A%9B/" title="理力: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="理力" style="background-color: #F8F9F9;">理力
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -387,7 +396,7 @@
                 <a href="/tags/%E5%8D%9A%E5%AE%A2/" title="博客: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="博客" style="background-color: #F8F9F9;">博客
+                            data-tagname="博客" style="background-color: #82E0AA;">博客
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -661,6 +670,14 @@ $(function () {
     </a>
 </div>
 
+
+    <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/xuehuapiaoluo.js"><\/script>');
+        }
+        </script>
 
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
