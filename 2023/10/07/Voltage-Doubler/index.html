@@ -20,17 +20,22 @@
     var CONFIG = {"hostname":"ryanyx.xyz","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="slow is fast">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ryan&#39;s Cabin">
-<meta property="og:url" content="https://ryanyx.xyz/tags/%E7%94%9F%E6%B4%BB/index.html">
+  <meta name="description" content="在看Razavi的电子电路视频时，对他讲到的一个电压倍增器没有太弄懂，因此查了一些资料，再写这篇文章梳理一下脉络，方便理解和记忆。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Voltage Doubler">
+<meta property="og:url" content="https://ryanyx.xyz/2023/10/07/Voltage-Doubler/index.html">
 <meta property="og:site_name" content="Ryan&#39;s Cabin">
-<meta property="og:description" content="slow is fast">
+<meta property="og:description" content="在看Razavi的电子电路视频时，对他讲到的一个电压倍增器没有太弄懂，因此查了一些资料，再写这篇文章梳理一下脉络，方便理解和记忆。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ryanyx.xyz/pic/volt_double.png">
+<meta property="article:published_time" content="2023-10-06T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-10-07T08:41:48.455Z">
 <meta property="article:author" content="Ryan">
+<meta property="article:tag" content="电路">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ryanyx.xyz/pic/volt_double.png">
 
-<link rel="canonical" href="https://ryanyx.xyz/tags/%E7%94%9F%E6%B4%BB/">
+<link rel="canonical" href="https://ryanyx.xyz/2023/10/07/Voltage-Doubler/">
 
 
 <script id="page-configurations">
@@ -38,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: 生活 | Ryan's Cabin</title>
+  <title>Voltage Doubler | Ryan's Cabin</title>
   
 
 
@@ -152,51 +157,102 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">生活
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ryanyx.xyz/2023/10/07/Voltage-Doubler/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Ryan">
+      <meta itemprop="description" content="slow is fast">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryan's Cabin">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Voltage Doubler
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-10-07 00:00:00 / 修改时间：16:41:48" itemprop="dateCreated datePublished" datetime="2023-10-07T00:00:00+08:00">2023-10-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/analog-IC/" itemprop="url" rel="index"><span itemprop="name">analog IC</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+        <blockquote>
+<p>在看Razavi的电子电路视频时，对他讲到的一个电压倍增器没有太弄懂，因此查了一些资料，再写这篇文章梳理一下脉络，方便理解和记忆。</p>
+</blockquote>
+<span id="more"></span>
+
+<p>电路图长这样：</p>
+<p><img src="/../pic/volt_double.png" alt="volt_double"></p>
+<p>这个电路可以看成<strong>钳位电路</strong>和<strong>峰值保持电路</strong>（HWR+滤波电容）的组合。这个电路也叫做Greinacher Circuit，属于半波的电压倍增器。</p>
+<p>在讨论之前，我们先假定一种最简单的情况，也就是两个电容相等，负载电阻无限大，二极管理想化，输入信号是一个峰值为E的正弦波。</p>
+<p>从负半周开始分析会好一点。当电压为负时，D1导通，虚线右侧电路被短路，开始给C1充电，直到电压到达-E。之后输入电压开始正向增长，此时D1两边的电压会使得D1关断，而D2开启，因此在负载很大的情况下，整个电路拓扑就变成了两个相同的电容的串联分压。此时，输入信号从-E变到+E，2E就被C1和C2平分了，C1两边的电压变为了0，C2两边的电压变为了E。当正半周的后半部分，输入信号电压往下降，A的电压就往下降了，因此D2被迫关断，此时D1也处于关断状态，电容电压维持不变。又一次来到负半周之后，C1通过D1再一次开始充电，当输入信号电压从-E开始增长，D1关断，此时C2两边的电压是+E，A相对地的电压是零，因此得等到输入信号增长到0时，D2才会导通因此从0到+E，分为两半就只有0.5E，所以C2两边电压增长0.5E。</p>
+<p>以此类推，之后每一次这样的过程，增长量就变成之前的一半，然后大概六或者七个周期之后，就近似为2E。</p>
+<p>当然还有种简单的方法可以快速得出这个电路的稳态，那就是钳位电路将-E钳位到0，因此峰值变为2E，再经过峰值保持电路，因此稳态输出就是2E。</p>
+<hr>
+<p>但是上述推理过程均是建立在电容相等，负载很大的情况下的，如果电容不相等，负载也没有大到能够忽略的地步，此时的电路又该怎么分析呢？</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2023-10-02T00:00:00+08:00"
-              content="2023-10-02">
-          10-02
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%94%B5%E8%B7%AF/" rel="tag"># 电路</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2023/10/02/%E9%87%8D%E5%9B%9E%E5%8D%9A%E5%AE%A2/" itemprop="url">
-            <span itemprop="name">时隔一年，我又想写博客了</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/10/06/%E7%90%86%E6%83%B3%E5%9B%BD2/" rel="prev" title="理想国（二）">
+      <i class="fa fa-chevron-left"></i> 理想国（二）
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
