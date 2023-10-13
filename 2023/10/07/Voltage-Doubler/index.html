@@ -27,13 +27,13 @@
 <meta property="og:site_name" content="Ryan&#39;s Cabin">
 <meta property="og:description" content="在看Razavi的电子电路视频时，对他讲到的一个电压倍增器没有太弄懂，因此查了一些资料，再写这篇文章梳理一下脉络，方便理解和记忆。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ryanyx.xyz/pic/volt_double.png">
+<meta property="og:image" content="https://ryanyx.xyz/2023/10/07/pic/volt_double.png">
 <meta property="article:published_time" content="2023-10-06T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-07T08:41:48.455Z">
+<meta property="article:modified_time" content="2023-10-08T14:00:25.395Z">
 <meta property="article:author" content="Ryan">
 <meta property="article:tag" content="电路">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ryanyx.xyz/pic/volt_double.png">
+<meta name="twitter:image" content="https://ryanyx.xyz/2023/10/07/pic/volt_double.png">
 
 <link rel="canonical" href="https://ryanyx.xyz/2023/10/07/Voltage-Doubler/">
 
@@ -79,7 +79,119 @@
   </style>
 </noscript>
 
-</head>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -186,10 +298,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-10-07 00:00:00 / 修改时间：16:41:48" itemprop="dateCreated datePublished" datetime="2023-10-07T00:00:00+08:00">2023-10-07</time>
+              <time title="创建时间：2023-10-07 00:00:00" itemprop="dateCreated datePublished" datetime="2023-10-07T00:00:00+08:00">2023-10-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-08 22:00:25" itemprop="dateModified" datetime="2023-10-08T22:00:25+08:00">2023-10-08</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -215,16 +333,16 @@
 <p>在看Razavi的电子电路视频时，对他讲到的一个电压倍增器没有太弄懂，因此查了一些资料，再写这篇文章梳理一下脉络，方便理解和记忆。</p>
 </blockquote>
 <span id="more"></span>
-
 <p>电路图长这样：</p>
-<p><img src="/../pic/volt_double.png" alt="volt_double"></p>
-<p>这个电路可以看成<strong>钳位电路</strong>和<strong>峰值保持电路</strong>（HWR+滤波电容）的组合。这个电路也叫做Greinacher Circuit，属于半波的电压倍增器。</p>
+<p><img src="../pic/volt_double.png" alt="volt_double"></p>
+<p>这个电路可以看成<strong>钳位电路</strong>和<strong>峰值保持电路</strong>（HWR+滤波电容）的组合。这个电路也叫做Greinacher
+Circuit，属于半波的电压倍增器。</p>
 <p>在讨论之前，我们先假定一种最简单的情况，也就是两个电容相等，负载电阻无限大，二极管理想化，输入信号是一个峰值为E的正弦波。</p>
 <p>从负半周开始分析会好一点。当电压为负时，D1导通，虚线右侧电路被短路，开始给C1充电，直到电压到达-E。之后输入电压开始正向增长，此时D1两边的电压会使得D1关断，而D2开启，因此在负载很大的情况下，整个电路拓扑就变成了两个相同的电容的串联分压。此时，输入信号从-E变到+E，2E就被C1和C2平分了，C1两边的电压变为了0，C2两边的电压变为了E。当正半周的后半部分，输入信号电压往下降，A的电压就往下降了，因此D2被迫关断，此时D1也处于关断状态，电容电压维持不变。又一次来到负半周之后，C1通过D1再一次开始充电，当输入信号电压从-E开始增长，D1关断，此时C2两边的电压是+E，A相对地的电压是零，因此得等到输入信号增长到0时，D2才会导通因此从0到+E，分为两半就只有0.5E，所以C2两边电压增长0.5E。</p>
 <p>以此类推，之后每一次这样的过程，增长量就变成之前的一半，然后大概六或者七个周期之后，就近似为2E。</p>
 <p>当然还有种简单的方法可以快速得出这个电路的稳态，那就是钳位电路将-E钳位到0，因此峰值变为2E，再经过峰值保持电路，因此稳态输出就是2E。</p>
 <hr>
-<p>但是上述推理过程均是建立在电容相等，负载很大的情况下的，如果电容不相等，负载也没有大到能够忽略的地步，此时的电路又该怎么分析呢？</p>
+<p>但是上述推理过程均是建立在电容相等，负载很大的情况下的，如果电容不相等，负载也没有大到能够忽略的地步，此时的电路又该怎么分析呢？还不知道怎么分析，先把问题放着。</p>
 
     </div>
 
@@ -246,7 +364,10 @@
     <a href="/2023/10/06/%E7%90%86%E6%83%B3%E5%9B%BD2/" rel="prev" title="理想国（二）">
       <i class="fa fa-chevron-left"></i> 理想国（二）
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/10/12/%E6%A0%85%E6%BA%90%E7%94%B5%E5%AE%B9%E5%92%8C%E6%A0%85%E6%BC%8F%E7%94%B5%E5%AE%B9/" rel="next" title="栅源电容和栅漏电容">
+      栅源电容和栅漏电容 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -318,20 +439,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -417,6 +538,61 @@
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
